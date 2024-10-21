@@ -9,6 +9,8 @@ Implementando também o envio de emails com smtp do gmail.
 
 - **Cadastrar cliente**: Adicionar um novo cliente ao sistema, salvando o mesmo num banco de dados e enviando um e-mail de boas vindas.
 
+- **UTILIZEI O POSTMAN PARA FAZER A REQUISIÇÃO HTTP POST.**
+
 ## Tecnologias Utilizadas
 
 - **Java 17**: Linguagem de programação.
@@ -18,6 +20,7 @@ Implementando também o envio de emails com smtp do gmail.
 - **Maven**: Ferramenta de automação de compilação e gerenciamento de dependências.
 - **RabbitMQ**: Software de mensagens com código aberto, que implementa o protocolo "Advanced Message Queuing Protocol" (AMQP).
 - **CloudAMQP**: Serviço de servidores gerenciados RabbitMQ na nuvem.
+- **Postman**: Ferramenta de teste de API para requisições.
 
 ## Pré-requisitos
 
