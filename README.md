@@ -37,11 +37,39 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
    CREATE DATABASE ms-user;
    ```
 
-3. No arquivo `src/main/resources/application.properties`, configure as credenciais de acesso ao banco de dados:
+3. No arquivo `src/main/resources/application.properties` do microservice email, configure as credenciais de acesso ao banco de dados e as configurações de envio de email e conexão com RabbitMQ:
 
    ```properties
-    spring.datasource.url= jdbc:postgresql://localhost:5432/nomedobancodedados
+      server.port=8082
+   
+    spring.datasource.url= jdbc:postgresql://localhost:5432/nomedobancodedadosemail
     spring.datasource.username=postgres
     spring.datasource.password=*****
     spring.jpa.hibernate.ddl-auto=update
+
+   spring.rabbitmq.addresses=****************************************** // link da queue do rabbitMQ
+
+   broker.queue.email.name=default.email
+
+   spring.mail.host=smtp.gmail.com
+   spring.mail.port=587
+   spring.mail.username=email@gmail.com //colocar email que será utilizado para disparar os emails
+   spring.mail.password=**** **** **** **** // chave do APP
+   spring.mail.properties.mail.smtp.auth=true
+   spring.mail.properties..mail.smtp.starttls.enable=true
+   ```
+
+4. No arquivo `src/main/resources/application.properties` do microservice user, configure as credenciais de acesso ao banco de dados e as configurações de conexão com RabbitMQ:
+   
+   ```properties
+   server.port=8081
+   
+   spring.datasource.url=jdbc:postgresql://localhost:5432/nomebancodedadosuser
+   spring.datasource.username=postgres
+   spring.datasource.password=************* // senha do banco de dados
+   spring.jpa.hibernate.ddl-auto=update
+   
+   spring.rabbitmq.addresses=*************************************************** //link da queue do rabbitMQ
+   
+   broker.queue.email.name=default.email
    ```
